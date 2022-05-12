@@ -12,21 +12,21 @@ input {
 }
 
 .slider {
-  max-width: 1280px;
+  max-width: 85rem;
   width: 80vw;
   margin: 0 auto;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   row-gap: 2vh;
 }
 
 .slider__images {
+  order: 1;
   overflow: hidden;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 0.3rem;
 }
 
 .slider__image-wrapper {
@@ -44,6 +44,8 @@ input {
 }
 
 .slider__text {
+  order: 2;
+
   overflow: hidden;
   width: 60%;
 }
@@ -59,12 +61,9 @@ input {
   width: 100%;
 }
 
-.slider__controls {
-  display: flex;
-  align-items: center;
-}
-
 .slider__button-label {
+  order: 3;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +73,11 @@ input {
   cursor: pointer;
 }
 
-input:checked + .slider__button-label > svg .inner-fill {
+.slider__button-label:first-of-type{
+  margin-left: auto;
+}
+
+.slider__controls input:checked ~ .slider__button-label > svg .inner-fill {
   fill: #25282A;
 }
 
@@ -95,4 +98,3 @@ input:checked + .slider__button-label > svg .inner-fill {
 .inner-fill {
   fill: #71ACFF;
 }
-
